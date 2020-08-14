@@ -2,8 +2,9 @@
   <div class="container frow">
     <div>
       <div class="py-5">Quote</div>
-      <input type="text">
+      <input type="text" v-model="singleQuote">
       <button @click="addQuote">Add Quote</button>
+      <div>{{ quotes }} </div>
 
       </div>
   </div>
@@ -11,9 +12,16 @@
 
 <script>
   export default {
+    data() {
+      return {
+        singleQuote: '',
+        quotes: []
+      }
+    },
     methods: {
       addQuote() {
-        console.log('added')
+        this.quotes.push(this.singleQuote)
+
       }
     }
   
