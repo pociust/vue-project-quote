@@ -4,13 +4,19 @@
       <div class="py-5">Quote</div>
       <input type="text" v-model="singleQuote">
       <button @click="addQuote">Add Quote</button>
-      <div>{{ quotes }} </div>
+      <div v-for="quote in quotes" :key="quote.length">
+        <Quotes>
+          <div>{{ quote }}</div>
+        </Quotes>
+      </div>
 
       </div>
   </div>
 </template>
 
 <script>
+import Quotes from './Quotes.vue';
+
   export default {
     data() {
       return {
@@ -18,12 +24,15 @@
         quotes: []
       }
     },
+    components: {
+      Quotes
+    },
     methods: {
       addQuote() {
         this.quotes.push(this.singleQuote)
 
       }
-    }
+    },
   
   }
 </script>
