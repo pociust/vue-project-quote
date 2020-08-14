@@ -11,5 +11,9 @@
 </script>
 
 <style scoped>
+  p { 
+    width: 200px;
+    height: 50px;
+  }
 
 </style>
