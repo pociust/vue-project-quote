@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <QuotesBar></QuotesBar>
+  <div class="p-10">
+    <QuotesBar :progressBar="quotes.length"></QuotesBar>
     <QuoteInputText @singleQuoteToPush="quotes.push($event)"></QuoteInputText>
     <Quotes>
       <div class="frow">
