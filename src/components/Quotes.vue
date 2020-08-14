@@ -1,5 +1,7 @@
 <template>
-  <div>Quotes Array</div>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
 <script>
