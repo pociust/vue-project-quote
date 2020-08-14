@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import frow from '../node_modules/frow/dist/frow.css'
 
 new Vue({
   el: '#app',
