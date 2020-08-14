@@ -4,8 +4,8 @@
       Quotes Added
     </div>
     <div class="outter-box">
-      <div class="inner-box">
-        2/10
+      <div class="inner-box" :style="{width: (numQuotes * 10 ) + '%'}">
+        {{ numQuotes }}/10
       </div>
     </div>
   </div>
@@ -13,6 +13,11 @@
 
 <script>
   export default {
+    data() {
+      return {
+        numQuotes: 0,
+      }
+    }
   
   }
 </script>
@@ -22,7 +27,6 @@
     font-size: 45px;
   }
   .outter-box {
-    width: 80%;
     height: 20px;
     border: 1px solid #333;
     border-radius: 10px;
