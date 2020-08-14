@@ -4,8 +4,8 @@
       Quotes Added
     </div>
     <div class="outter-box">
-      <div class="inner-box" :style="{width: (numQuotes * 10 ) + '%'}">
-        {{ numQuotes }}/10
+      <div class="inner-box" :style="{width: (progressBar * 10 ) + '%'}">
+        {{ progressBar }}/10
       </div>
     </div>
   </div>
@@ -13,9 +13,10 @@
 
 <script>
   export default {
-    data() {
-      return {
-        numQuotes: 0,
+    props: {
+      progressBar: {
+        type: Number,
+        default: 0
       }
     }
   
