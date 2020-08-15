@@ -1,7 +1,7 @@
 <template>
   <div class="p-10">
     <QuotesBar :progressBar="quotes.length"></QuotesBar>
-    <QuoteInputText @singleQuoteToPush="quotes.push($event)"></QuoteInputText>
+    <QuoteInputText @singleQuoteToPush="quotes.push($event)" :quoteLengthLimitation="quotes.length"></QuoteInputText>
     <Quotes>
       <div class="frow">
         <div v-for="quote in quotes" :key="quote.length" class="row-between shadow-light p-10 m-10">
