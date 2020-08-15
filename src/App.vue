@@ -4,7 +4,7 @@
     <QuoteInputText @singleQuoteToPush="quotes.push($event)" :quoteLengthLimitation="quotes.length"></QuoteInputText>
     <Quotes>
       <div class="frow">
-        <div v-for="quote in quotes" :key="quote.length" class="row-between shadow-light p-10 m-10">
+        <div v-for="(quote, index) in quotes" :key="quote" class="frow row-between shadow-light p-10 m-10 quotes" @click="removeQuote(index)">
             <p>{{ quote }}</p>
         </div>
       </div>
@@ -30,6 +30,17 @@ import Footer from './components/Footer';
       QuoteInputText,
       Quotes,
       Footer
+    },
+    methods: {
+      removeQuote(quote) {
+        this.quotes.splice(quote, 1)
+      }
     }
   }
 </script>
+<style scoped>
+  .quotes:hover {
+    background-color: #aaa;
+  }
+
+</style>
